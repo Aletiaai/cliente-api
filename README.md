@@ -22,7 +22,7 @@ Esta es una API REST Spring Boot para gestionar los datos de los clientes.
 1.  Clona el repositorio:
 
     ```bash
-    git clone <your_repository_url>
+    git clone <la_url_de_tu_repositorio>
     ```
 
 2.  Navega al directorio donde está el proyecto (antes crea la carpeta):
@@ -89,7 +89,7 @@ Reemplaza "tu_contraseña" con la contraseña real de tu usuario en MySQL y si t
     ```bash
     ./mvnw spring-boot:run
     ```
-    
+
 ## Running Tests
 
 * Explain how to run the unit and integration tests.

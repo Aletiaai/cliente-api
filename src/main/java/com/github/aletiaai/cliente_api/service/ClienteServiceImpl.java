@@ -8,19 +8,19 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-@Service
+@Service // Indica que esta clase es un componente de servicio de Spring
 public class ClienteServiceImpl implements ClienteService {
 
-    private final ClienteRepository clienteRepository;
+    private final ClienteRepository clienteRepository; // Repositorio para acceder a la base de datos de clientes
 
     //@Autowired
     public ClienteServiceImpl(ClienteRepository clienteRepository) {
-        this.clienteRepository = clienteRepository;
+        this.clienteRepository = clienteRepository; // Constructor para inyectar el repositorio
     }
 
-    @Override
+    @Override // Implementación del método para obtener todos los clientes
     public List<Cliente> getAllClientes() {
-        return clienteRepository.findAll();
+        return clienteRepository.findAll(); // Llama al método findAll() del repositorio
     }
 
     @Override
@@ -36,17 +36,17 @@ public class ClienteServiceImpl implements ClienteService {
     @Override
     public Cliente updateCliente(Long id, Cliente cliente) {
         if (clienteRepository.existsById(id)) {
-            cliente.setId(id);
+            cliente.setId(id); // Establece el ID del cliente
             return clienteRepository.save(cliente);
         } else {
-            throw new RuntimeException("Cliente not found with ID: " + id);
+            throw new RuntimeException("Cliente not found with ID: " + id); // Lanza una excepción si el cliente no existe
         }
     }
 
     @Override
     public void deleteCliente(Long id) {
-        if (clienteRepository.existsById(id)) {
-            clienteRepository.deleteById(id);
+        if (clienteRepository.existsById(id)) { // Verifica si el cliente con el ID dado existe
+            clienteRepository.deleteById(id); // Llama al método deleteById() del repositorio
         } else {
             throw new RuntimeException("Cliente not found with ID: " + id);
         }

@@ -6,10 +6,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-@Entity
-@Table(name = "clientes") //opcional en caso de que quiera en caso de querer reescribir la que sale por default 
+@Entity // Indica que esta clase es una entidad JPA (mapeada a una tabla de base de datos)
+@Table(name = "clientes") //opcional: especifica el nombre de la tabla en la base de datos
 public class Cliente {
-    @Id
+    @Id // Indica que este campo es la clave primaria de la entidad
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
@@ -18,7 +18,7 @@ public class Cliente {
     private String telefono;
     
     // Constructors
-    public Cliente() {}
+    public Cliente() {} // Constructor vacío (necesario para JPA)
 
     public Cliente(String nombre, String email, String telefono) {
         this.nombre = nombre;
@@ -26,7 +26,7 @@ public class Cliente {
         this.telefono = telefono;
     }
     
-    // Getters and Setters
+    // Getters y Setters (métodos para acceder y modificar los atributos)
     public Long getId() {
         return id;
     }
