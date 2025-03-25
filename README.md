@@ -1,0 +1,79 @@
+# Cliente API
+
+## Descripción
+
+Esta es una API REST Spring Boot para gestionar los datos de los clientes.
+
+## Tecnología utilizada
+
+* Spring Boot
+* Spring Data JPA
+* MySQL
+* Maven
+
+## Prerrequisitos
+
+* Java 17 or higher
+* Maven
+* MySQL database
+
+## Setup
+
+1.  Clona el repositorio:
+
+    ```bash
+    git clone <your_repository_url>
+    ```
+
+2.  Navega al directorio donde está el proyecto:
+
+    ```bash
+    cd cliente-api
+    ```
+
+3.  Configura la conección a la base de datos en `application.properties`.
+
+4.  Construye el proyecto:
+
+    ```bash
+    ./mvnw clean install
+    ```
+
+5.  Corre la aplicación:
+
+    ```bash
+    ./mvnw spring-boot:run
+    ```
+
+## Endpoints
+
+* `GET /clientes`: Obtener todos los clients.
+* `GET /clientes/{id}`: Obtener un cliente por su ID.
+* `POST /clientes`: Crear un cliente nuevo.
+* `PUT /clientes/{id}`: Actualizar un cliente existente.
+* `DELETE /clientes/{id}`: Borrar un client.
+
+## Database Setup
+
+1. Si aún no tienes intalado MySQL instalalo [desde este enlace](https://dev.mysql.com/downloads/)
+2. Una vez intalado, ingresa a MySQL con tu contraseña y tu usuario desde la terminal usando el siguiente comando:
+    mysql -u root -p
+3. Usando la terminal crea la base de datos;
+    CREATE DATABASE cliente_db;
+3. Configura las environment variables, crear un archivo en la tu directorio raiz con la siguiente información:
+    DB_URL=jdbc:mysql://localhost:3306/cliente_db
+    DB_USER=root
+    DB_PASS=tu_contraseña
+Reemplaza "tu_contraseña" con la contraseña real de tu usuario en MySQL
+4. Carga las environmet variables usando el siguiente comando:
+    export $(grep -v '^#' .env | xargs)
+5. Verifica la conección con la base de datos
+    ./mvnw spring-boot:run
+
+## Running Tests
+
+* Explain how to run the unit and integration tests.
+
+    ```bash
+    ./mvnw test
+    ```
