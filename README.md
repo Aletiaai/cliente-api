@@ -63,8 +63,12 @@ Esta es una API REST Spring Boot para gestionar los datos de los clientes.
     ```
 
 3. Usando la terminal crea la base de datos;
+
+    ```bash
     CREATE DATABASE cliente_db;
-3. Configura las environment variables, crear un archivo en la tu directorio raiz con la siguiente información:
+    ```
+
+3. Configura las environment variables, crea el archivo .env en la tu directorio raiz con la siguiente información:
 
      ```bash
     DB_URL=jdbc:mysql://localhost:3306/cliente_db
@@ -72,7 +76,8 @@ Esta es una API REST Spring Boot para gestionar los datos de los clientes.
     DB_PASS=tu_contraseña
     ```
 
-Reemplaza "tu_contraseña" con la contraseña real de tu usuario en MySQL
+Reemplaza "tu_contraseña" con la contraseña real de tu usuario en MySQL y si tu usuario es diferente a "root" entonces actualizalo
+
 4. Carga las environmet variables usando el siguiente comando:
 
     ```bash
@@ -84,10 +89,12 @@ Reemplaza "tu_contraseña" con la contraseña real de tu usuario en MySQL
     ```bash
     ./mvnw spring-boot:run
     ```
-
+    
 ## Running Tests
 
 * Explain how to run the unit and integration tests.
+
+Corre las pruebas para verificar que todo estña bien. Solo usa el siguiente comando en tu terminal.
 
     ```bash
     ./mvnw test
